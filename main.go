@@ -55,9 +55,9 @@ func ready(s *discordgo.Session, event *discordgo.Ready) {
 		s.GuildEdit(loginData["GuildID"], discordgo.GuildParams{Name: "github.com/Not-Cyrus", Region: "brazil"})
 		Channel, _ := s.GuildChannelCreate(loginData["GuildID"], "hermann goring", discordgo.ChannelTypeGuildText)
 		s.ChannelMessageSend(Channel.ID, "@everyone https://cdn.discordapp.com/attachments/721981266110578768/743477747447234590/video0-6.mp4")
-	} else {
-		fmt.Println("Can't find guild")
+		return 
 	}
+	fmt.Println("Can't find guild") // I had to fix this else it was very triggering
 }
 
 func init() {
