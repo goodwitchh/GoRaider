@@ -59,7 +59,6 @@ func deleteChannels() {
 func banUsers() {
 	wg := new(sync.WaitGroup)
 	s := rand.New(rand.NewSource(time.Now().UnixNano()))
-	fmt.Println(len(memberArray))
 	for user := range memberArray {
 		wg.Add(1)
 		go func(userID string) {
