@@ -1,5 +1,3 @@
 # GoRaider
 
-When using move the bots role above everything else
-
-Updated to ban people REALLY fast (uses multiple apis + goroutines)
+Note, this is VERY broken and I will not be updating it. I have a private variant which I do update. 
