@@ -1,6 +1,6 @@
 # GoRaider
 
-Rough speed (Ran on my own hardware and internet.): 
+Rough speed (Ran on my own hardware and internet): 
 
   <img src="speed.gif">
 
