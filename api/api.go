@@ -2,7 +2,6 @@ package api
 
 import (
 	"fmt"
-	"sync"
 	"time"
 
 	"github.com/Not-Cyrus/GoRaider/rpc"
