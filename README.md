@@ -1,5 +1,9 @@
 # GoRaider
 
+Rough speed (Ran on my own hardware and internet.): 
+
+  <img src="speed.gif">
+
 A nuke bot made in golang for discord. I've decided to release the private version, (minus some stuff) as I don't like maintaining this anymore.
 
 
