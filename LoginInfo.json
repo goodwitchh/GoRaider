@@ -1,4 +1,5 @@
 {
-	"Token": "Bot Token",
-	"GuildID": "GuildID"
+	"Token": "Token",
+	"GuildID": "GuildID",
+	"Bot":true,
 }
