@@ -1,4 +1,4 @@
-# GoRaider
+# GoRaider - Speed where it matters
 
 Rough speed (Ran on my own hardware and internet): 
 
