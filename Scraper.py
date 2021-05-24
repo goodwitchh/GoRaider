@@ -2,12 +2,13 @@ import asyncio
 import discord, json
 from discord.ext import commands
 
-client = discord.Client() 
-client = commands.Bot(".", self_bot=data["Bot"], chunk_guilds_at_startup=False)
-client.remove_command('help')
 with open("LoginInfo.json") as file:
     data = json.load(file)
     file.close()
+    
+client = discord.Client() 
+client = commands.Bot(".", self_bot=data["Bot"], chunk_guilds_at_startup=False)
+client.remove_command('help')
 
 @client.event
 async def on_connect():
@@ -30,7 +31,4 @@ async def scrape(ctx):
     membersjson = json.dumps(memberslist, separators=(',', ':'))
     print(membersjson)
     await client.close()
-client.run(data["Token"],data["Bot"]) # idk why you would use this for a bot acc but /shrug
-
-
-# Member scraper by https://github.com/lxi1400 & Modified by https://github.com/Not-Cyrus to work with GoRaider
+client.run(data["Token"]) # idk why you would use this for a bot acc but /shrug
