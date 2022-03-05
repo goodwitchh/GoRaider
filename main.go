@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"https://github.com/goodwitchh/GoRaider/tree/main/api"
-	"https://github.com/goodwitchh/GoRaider/tree/main/utils"
+	"github.com/goodwitchh/GoRaider/tree/main/api"
+	"github.com/goodwitchh/GoRaider/tree/main/utils"
 	"github.com/valyala/fastjson"
 )
 
