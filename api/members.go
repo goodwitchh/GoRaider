@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Not-Cyrus/GoRaider/utils"
+	"https://github.com/goodwitchh/GoRaider/tree/main/utils"
 	"github.com/valyala/fastjson"
 )
 
