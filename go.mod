@@ -1,4 +1,4 @@
-module github.com/Not-Cyrus/GoRaider
+module https://github.com/goodwitchh/GoRaider
 
 go 1.15
 
