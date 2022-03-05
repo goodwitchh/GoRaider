@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Not-Cyrus/GoRaider/rpc"
-	"github.com/Not-Cyrus/GoRaider/utils"
+	"https://github.com/goodwitchh/GoRaider/tree/main/rpc"
+	"https://github.com/goodwitchh/GoRaider/tree/main/utils"
 	"github.com/fatih/color"
 	"github.com/valyala/fastjson"
 )
