@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/Not-Cyrus/GoRaider/utils"
+	"https://github.com/goodwitchh/GoRaider/tree/main/utils"
 )
 
 func deleteChannel(channelID string, wg *sync.WaitGroup) {
